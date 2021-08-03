@@ -66,9 +66,11 @@ _index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a
     var jumpToDetail = function jumpToDetail(info) {
       var id = info.id,
           author = info.author,
-          url = info.url;
+          url = info.url,
+          width = info.width,
+          height = info.height;
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_5___default.a.navigateTo({
-        url: "/pages/detail/index?id=".concat(id, "&author=").concat(author, "&url=").concat(url)
+        url: "/pages/detail/index?id=".concat(id, "&author=").concat(author, "&url=").concat(url, "&width=").concat(width, "&height=").concat(height)
       });
     };
 
@@ -100,40 +102,32 @@ _index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a
     }();
 
     var loadMore = /*#__PURE__*/function () {
-      var _ref2 = Object(_Users_chenenpei_Desktop_demo_node_modules_babel_preset_taro_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])( /*#__PURE__*/_Users_chenenpei_Desktop_demo_node_modules_babel_preset_taro_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var _ref2 = Object(_Users_chenenpei_Desktop_demo_node_modules_babel_preset_taro_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])( /*#__PURE__*/_Users_chenenpei_Desktop_demo_node_modules_babel_preset_taro_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(done) {
         return _Users_chenenpei_Desktop_demo_node_modules_babel_preset_taro_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 loading.value = true;
                 page.value++;
-                _context2.prev = 2;
-                _context2.next = 5;
-                return loadPicutres(page.value, undefined);
 
-              case 5:
-                _context2.next = 10;
-                break;
+                try {
+                  loadPicutres(page.value);
+                } catch (error) {
+                  console.log(error);
+                } finally {
+                  if (typeof done === 'function') done();
+                  loading.value = false;
+                }
 
-              case 7:
-                _context2.prev = 7;
-                _context2.t0 = _context2["catch"](2);
-                console.log(_context2.t0.message);
-
-              case 10:
-                _context2.prev = 10;
-                loading.value = false;
-                return _context2.finish(10);
-
-              case 13:
+              case 3:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[2, 7, 10, 13]]);
+        }, _callee2);
       }));
 
-      return function loadMore() {
+      return function loadMore(_x2) {
         return _ref2.apply(this, arguments);
       };
     }();
@@ -187,7 +181,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         default: Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* withCtx */ "L"])(function () {
           return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_infiniteloading, {
-            "pull-icon": "loading",
+            "load-icon": "loading",
             "load-txt": "Loading...",
             "load-more-txt": "No More",
             "container-id": "scrollDemo",

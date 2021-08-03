@@ -1,3 +1,6 @@
 .detail {
   margin: 16rpx 32rpx;
 }
+.detail image {
+  width: 100%;
+}

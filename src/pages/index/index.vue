@@ -3,7 +3,7 @@
         <nut-cell>
             <view-block class="infiniteUl" id="scrollDemo">
                 <nut-infiniteloading
-                    pull-icon="loading"
+                    load-icon="loading"
                     load-txt="Loading..."
                     load-more-txt="No More"
                     container-id="scrollDemo"
@@ -47,23 +47,24 @@ export default {
         const pictures = computed(() => store.state.pictures);
 
         const jumpToDetail = (info) => {
-            const { id, author, url } = info;
+            const { id, author, url, width, height } = info;
             Taro.navigateTo({
-                url: `/pages/detail/index?id=${id}&author=${author}&url=${url}`,
+                url: `/pages/detail/index?id=${id}&author=${author}&url=${url}&width=${width}&height=${height}`,
             });
         };
 
         const loadPicutres = async (page, limit = 10) => {
             return store.dispatch("LOAD_PICTURES_ACTION", { page, limit });
         };
-        const loadMore = async () => {
+        const loadMore = async (done) => {
             loading.value = true;
             page.value++;
             try {
-                await loadPicutres(page.value, undefined);
+                loadPicutres(page.value);
             } catch (error) {
-                console.log(error.message);
+                console.log(error);
             } finally {
+                if (typeof done === 'function') done();
                 loading.value = false;
             }
         };
@@ -91,7 +92,6 @@ export default {
     text-align: center;
 
     .infiniteUl {
-        padding: 0 8px;
         height: 100vh;
         width: 100%;
         overflow-y: auto;
@@ -99,17 +99,19 @@ export default {
     }
 
     .infiniteLi {
-        margin-top: 10px;
+        margin-top: 16px;
         font-size: 14px;
         width: 100%;
         color: rgba(100, 100, 100, 1);
         text-align: center;
-    }
 
-    .loading {
-        display: block;
-        width: 100%;
-        text-align: center;
+        .content {
+            width: 100%;
+
+            image {
+                width: 100%;
+            }
+        }
     }
 }
 </style>

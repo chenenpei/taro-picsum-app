@@ -48,10 +48,14 @@ _index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a
     var id = _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default.a.getCurrentInstance().router.params.id;
     var author = _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default.a.getCurrentInstance().router.params.author;
     var url = _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default.a.getCurrentInstance().router.params.url;
+    var width = _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default.a.getCurrentInstance().router.params.width;
+    var height = _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default.a.getCurrentInstance().router.params.height;
     return {
       id: id,
       author: author,
-      url: url
+      url: url,
+      width: width,
+      height: height
     };
   }
 });
@@ -76,18 +80,29 @@ var _hoisted_1 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_nut_cell = Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* resolveComponent */ "E"])("nut-cell");
 
-  return Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])("view", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_cell, null, {
-    default: Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* withCtx */ "L"])(function () {
-      return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("image", {
-        src: "https://picsum.photos/id/".concat($setup.id, "/1000")
-      }, null, 8
-      /* PROPS */
-      , ["src"])];
-    }),
-    _: 1
-    /* STABLE */
-
-  })]);
+  return Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])("view", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("view", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("image", {
+    src: "https://picsum.photos/id/".concat($setup.id, "/1000")
+  }, null, 8
+  /* PROPS */
+  , ["src"]), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_cell, {
+    title: "id",
+    icon: "tips",
+    desc: $setup.id
+  }, null, 8
+  /* PROPS */
+  , ["desc"]), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_cell, {
+    title: "author",
+    icon: "my",
+    desc: $setup.author
+  }, null, 8
+  /* PROPS */
+  , ["desc"]), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_cell, {
+    title: "resoulution",
+    icon: "photograph",
+    desc: "".concat($setup.width, " * ").concat($setup.height)
+  }, null, 8
+  /* PROPS */
+  , ["desc"])])]);
 }
 
 /***/ }),
