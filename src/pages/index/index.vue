@@ -1,31 +1,29 @@
 <template>
     <view class="index">
-        <nut-cell>
-            <view-block class="infiniteUl" id="scrollDemo">
-                <nut-infiniteloading
-                    load-icon="loading"
-                    load-txt="Loading..."
-                    load-more-txt="No More"
-                    container-id="scrollDemo"
-                    :has-more="hasMore"
-                    @load-more="loadMore"
+        <view-block class="infiniteUl" id="scrollDemo">
+            <nut-infiniteloading
+                load-icon="loading"
+                load-txt="Loading..."
+                load-more-txt="No More"
+                container-id="scrollDemo"
+                :has-more="hasMore"
+                @load-more="loadMore"
+            >
+                <nut-cell
+                    class="infiniteLi"
+                    v-for="(item, index) in pictures"
+                    :key="index"
+                    @tap="jumpToDetail(item)"
                 >
-                    <nut-cell
-                        class="infiniteLi"
-                        v-for="(item, index) in pictures"
-                        :key="index"
-                        @tap="jumpToDetail(item)"
-                    >
-                        <view class="content">
-                            <image
-                                :src="`https://picsum.photos/id/${item.id}/300/300`"
-                            />
-                            <view>{{ item.author }}</view>
-                        </view>
-                    </nut-cell>
-                </nut-infiniteloading>
-            </view-block>
-        </nut-cell>
+                    <view class="content">
+                        <image
+                            :src="`https://picsum.photos/id/${item.id}/300/300`"
+                        />
+                        <view>{{ item.author }}</view>
+                    </view>
+                </nut-cell>
+            </nut-infiniteloading>
+        </view-block>
     </view>
 </template>
 
@@ -64,7 +62,7 @@ export default {
             } catch (error) {
                 console.log(error);
             } finally {
-                if (typeof done === 'function') done();
+                if (typeof done === "function") done();
                 loading.value = false;
             }
         };

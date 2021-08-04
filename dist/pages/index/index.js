@@ -115,7 +115,7 @@ _index_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a
                 } catch (error) {
                   console.log(error);
                 } finally {
-                  if (typeof done === 'function') done();
+                  if (typeof done === "function") done();
                   loading.value = false;
                 }
 
@@ -173,60 +173,53 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_view_block = Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* resolveComponent */ "E"])("view-block");
 
-  return Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])("view", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_cell, null, {
+  return Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])("view", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_view_block, {
+    class: "infiniteUl",
+    id: "scrollDemo"
+  }, {
     default: Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* withCtx */ "L"])(function () {
-      return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_view_block, {
-        class: "infiniteUl",
-        id: "scrollDemo"
+      return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_infiniteloading, {
+        "load-icon": "loading",
+        "load-txt": "Loading...",
+        "load-more-txt": "No More",
+        "container-id": "scrollDemo",
+        "has-more": $setup.hasMore,
+        onLoadMore: $setup.loadMore
       }, {
         default: Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* withCtx */ "L"])(function () {
-          return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])(_component_nut_infiniteloading, {
-            "load-icon": "loading",
-            "load-txt": "Loading...",
-            "load-more-txt": "No More",
-            "container-id": "scrollDemo",
-            "has-more": $setup.hasMore,
-            onLoadMore: $setup.loadMore
-          }, {
-            default: Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* withCtx */ "L"])(function () {
-              return [(Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(true), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])(vue__WEBPACK_IMPORTED_MODULE_0__[/* Fragment */ "b"], null, Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* renderList */ "C"])($setup.pictures, function (item, index) {
-                return Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])(_component_nut_cell, {
-                  class: "infiniteLi",
-                  key: index,
-                  onTap: function onTap($event) {
-                    return $setup.jumpToDetail(item);
-                  }
-                }, {
-                  default: Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* withCtx */ "L"])(function () {
-                    return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("view", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("image", {
-                      src: "https://picsum.photos/id/".concat(item.id, "/300/300")
-                    }, null, 8
-                    /* PROPS */
-                    , ["src"]), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("view", null, Object(vue__WEBPACK_IMPORTED_MODULE_1__[/* toDisplayString */ "K"])(item.author), 1
-                    /* TEXT */
-                    )])];
-                  }),
-                  _: 2
-                  /* DYNAMIC */
+          return [(Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(true), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])(vue__WEBPACK_IMPORTED_MODULE_0__[/* Fragment */ "b"], null, Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* renderList */ "C"])($setup.pictures, function (item, index) {
+            return Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* openBlock */ "A"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createBlock */ "g"])(_component_nut_cell, {
+              class: "infiniteLi",
+              key: index,
+              onTap: function onTap($event) {
+                return $setup.jumpToDetail(item);
+              }
+            }, {
+              default: Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* withCtx */ "L"])(function () {
+                return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("view", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("image", {
+                  src: "https://picsum.photos/id/".concat(item.id, "/300/300")
+                }, null, 8
+                /* PROPS */
+                , ["src"]), Object(vue__WEBPACK_IMPORTED_MODULE_0__[/* createVNode */ "l"])("view", null, Object(vue__WEBPACK_IMPORTED_MODULE_1__[/* toDisplayString */ "K"])(item.author), 1
+                /* TEXT */
+                )])];
+              }),
+              _: 2
+              /* DYNAMIC */
 
-                }, 1032
-                /* PROPS, DYNAMIC_SLOTS */
-                , ["onTap"]);
-              }), 128
-              /* KEYED_FRAGMENT */
-              ))];
-            }),
-            _: 1
-            /* STABLE */
-
-          }, 8
-          /* PROPS */
-          , ["has-more", "onLoadMore"])];
+            }, 1032
+            /* PROPS, DYNAMIC_SLOTS */
+            , ["onTap"]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))];
         }),
         _: 1
         /* STABLE */
 
-      })];
+      }, 8
+      /* PROPS */
+      , ["has-more", "onLoadMore"])];
     }),
     _: 1
     /* STABLE */

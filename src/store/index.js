@@ -5,7 +5,7 @@ import Taro from '@tarojs/taro';
 const store = createStore({
     state() {
         return {
-            pictures: []
+            pictures: [],
         }
     },
     mutations: {
